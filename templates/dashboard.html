@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SSH Brute Force Dashboard</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        h1{
+            color: #333;
+        }
+
+        table{
+            width: 80%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td{
+            padding: 12px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        th{
+            background-color: #222;
+            color: white;
+        }
+
+        tr:nth-child(even){
+            background-color: #f2f2f2;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>SSH Brute Force Detection Dashboard</h1>
+
+    <table>
+
+        <tr>
+            <th>ID</th>
+            <th>IP Address</th>
+            <th>Failed Attempts</th>
+        </tr>
+
+        {% for attack in attacks %}
+
+        <tr>
+            <td>{{ attack[0] }}</td>
+            <td>{{ attack[1] }}</td>
+            <td>{{ attack[2] }}</td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</body>
+</html>
