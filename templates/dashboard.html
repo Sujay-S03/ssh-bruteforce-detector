@@ -2,38 +2,39 @@
 <html>
 <head>
     <title>SSH Brute Force Dashboard</title>
-
+    <meta http-equiv="refresh" content="5">
     <style>
 
         body{
             font-family: Arial;
-            background-color: #f4f4f4;
+            background-color: #121212;
+            color: white;
             padding: 20px;
         }
 
         h1{
-            color: #333;
+            color: #00ff99;
         }
 
         table{
-            width: 80%;
+            width: 90%;
             border-collapse: collapse;
-            background: white;
+            background-color: #1e1e1e;
         }
 
         th, td{
             padding: 12px;
-            border: 1px solid #ccc;
+            border: 1px solid #333;
             text-align: center;
         }
 
         th{
-            background-color: #222;
+            background-color: #00aa66;
             color: white;
         }
 
         tr:nth-child(even){
-            background-color: #f2f2f2;
+            background-color: #2b2b2b;
         }
 
     </style>
@@ -50,6 +51,7 @@
             <th>ID</th>
             <th>IP Address</th>
             <th>Failed Attempts</th>
+            <th>Attack Time</th>
         </tr>
 
         {% for attack in attacks %}
@@ -58,6 +60,7 @@
             <td>{{ attack[0] }}</td>
             <td>{{ attack[1] }}</td>
             <td>{{ attack[2] }}</td>
+            <td>{{ attack[3] }}</td>
         </tr>
 
         {% endfor %}
